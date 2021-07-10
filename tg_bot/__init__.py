@@ -43,7 +43,7 @@ if ENV:
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
 
-    WEBHOOK = bool(os.environ.get('WEBHOOK', False))
+    WEBHOOK = bool(os.environ.get('WEBHOOK', True))
     URL = os.environ.get('URL', "")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
