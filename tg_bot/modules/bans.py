@@ -91,7 +91,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         chat.kick_member(user_id)
         bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         keyboard = []
-        reply = "{} ന് ബണ്ണ് കൊടുത്തു വിട്ടിട്ടുണ്ട് !".format(mention_html(member.user.id, member.user.first_name))
+        reply = "{} Has been given the bun on !".format(mention_html(member.user.id, member.user.first_name))
         message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
         return log
 
@@ -100,7 +100,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             chat_id = update.effective_chat.id
             message = update.effective_message
             # Do not reply
-            reply = "{} ന് ബണ്ണ് കൊടുത്തു വിട്ടിട്ടുണ്ട് !".format(mention_html(member.user.id, member.user.first_name))
+            reply = "{} Has been given the bun on !".format(mention_html(member.user.id, member.user.first_name))
             bot.send_message(chat_id, reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
 #           message.reply_text('Banned!', quote=False)
             return log
@@ -175,13 +175,13 @@ def temp_ban(bot: Bot, update: Update, args: List[str]) -> str:
     try:
         chat.kick_member(user_id, until_date=bantime)
         bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        message.reply_text("Banned! User will be banned for {}.".format(time_val))
+        message.reply_text("Ban minga mowa! User will be banned for {}.".format(time_val))
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            message.reply_text("Banned! User will be banned for {}.".format(time_val), quote=False)
+            message.reply_text("Ban minga mowa! User will be banned for {}.".format(time_val), quote=False)
             return log
         else:
             LOGGER.warning(update)
