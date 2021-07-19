@@ -91,7 +91,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         chat.kick_member(user_id)
         bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         keyboard = []
-        reply = "{} Has been given the bun on !".format(mention_html(member.user.id, member.user.first_name))
+        reply = "{} dobbey ikkada nunchi !".format(mention_html(member.user.id, member.user.first_name))
         message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
         return log
 
@@ -100,7 +100,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             chat_id = update.effective_chat.id
             message = update.effective_message
             # Do not reply
-            reply = "{} Has been given the bun on !".format(mention_html(member.user.id, member.user.first_name))
+            reply = "{} mingey ra nibba fellow !".format(mention_html(member.user.id, member.user.first_name))
             bot.send_message(chat_id, reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
 #           message.reply_text('Banned!', quote=False)
             return log
